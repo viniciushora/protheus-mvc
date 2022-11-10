@@ -98,7 +98,7 @@ Static Function MenuDef()
 
 Return aRotina
 ```
-
+![Resultado Final](imagem1.PNG "Resultado final")
 - Resultado final o mesmo;
 - É recomendado a 2ª forma, que utiliza comandos ao invés de posições de um vetor;
 - Facilita manutenções;

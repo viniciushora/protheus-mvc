@@ -15,7 +15,9 @@
 
 ## Construção de um Browse
 ### Construção básica de um Browse
-- Exemplo: PM001.prw
+- Exemplo: PM001.prw<br>
+![Browse cadastro cartas de Tarot](imagem1.PNG)
+
 - Com esta estrutura, a aplicação já possui:
   - Pesquisa de registro;
   - Filtro configurável;
@@ -88,3 +90,5 @@ oBrowse:DisableDetails()
 
 ### Exemplo completo de Browse
 - Exemplo: PM002.prw
+
+![Browse cadastro cartas de Tarot com descrição](imagem2.PNG)

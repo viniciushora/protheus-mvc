@@ -105,4 +105,80 @@ Return oModel
 
 ## Construção da função ViewDef
 - A interface View é responsável por renderizar o modelo de dados (Model) e possibilitar a interação com o usuário;
-- 
+- Contêm a definição de toda a parte visual da aplicação;
+
+```
+// Inicializando a função
+Static Function ViewDef()
+```
+- A interface (View) sempre trabalha baseada em um modelo de dados;
+-  **FWLoadModel**: obtém o modelo de dados que está definido em um 
+fonte, seja o atual fonte ou um externo;
+
+```
+Local oModel := FWLoadModel( 'PM003' )
+```
+
+- PM003 é o nome do fonte de onde quer se obter o modelo;
+
+```
+//Iniciando a construção da interface (View)
+oView := FWFormView():New()
+```
+
+- **FWFormView**: Classe que deverá ser usada para a construção de um objeto de interface;
+```
+// Definindo qual o modelo de dados que será utilizado na interface
+oView:SetModel( oModel )
+```
+
+## Criação de um componente de formulários na interface (AddField)
+- **AddField**: Interface/Controle do tipo formulário;
+- Deve iniciar, obrigatoriamente, com um componente do tipo formulário.
+
+```
+oView:AddField( 'VIEW_ZA0', oStruZA0, 'ZA0MASTER' )
+```
+
+- O primeiro parâmetro é o ID único do componente da interface;
+- **oStruZA0** é a estrutura que será usada;
+- **ZA0MASTER** é o ID do componente do modelo de dados;
+- Cada componente da interfacedeve ter um componente do modelo de dados;
+- Os dados de ZA0MASTER serão exibidos em VIEW_ZA0;
+
+## Exibição dos dados na interface (CreateHorizontalBox /CreateVerticalBox)
+- Container = box horizontal;
+
+```
+// Criação de um box horizontal
+oView:CreateHorizontalBox( 'TELA' , 100 )
+```
+
+- Cada componente deve ter um ID;
+- TELA é o ID do box e o número 100 representa o percentual da tela que será utilizado pelo Box;
+- No MVC não há referências a coordenadas absolutas de tela;
+- Componentes visuais são 
+sempre ocuparão todo o contêiner onde for inserido;
+
+## Relacionando o componente da interface (SetOwnerView)
+- **SetOwnerView**: Relacionar o componente da interface com um box para exibição;
+  
+```
+oView:SetOwnerView( 'VIEW_ZA0', 'TELA' )
+```
+
+## Finalização da ViewDef
+- Ao final, deve retornar o objeto View gerado.
+
+```
+Return oView
+```
+
+## Finalização da criação da aplicação com uma entidade
+- Criação de uma aplicação MVC com apenas uma entidade;
+- Contém:
+  - ModelDef;
+  - ViewDef.
+- Equivalente ao modelo 1;
+
+![Resultado final](imagem1.PNG)
