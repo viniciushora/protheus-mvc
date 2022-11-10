@@ -1,23 +1,22 @@
 #include "TOTVS.ch"
 
-User Function COMP011_MVC()
+User Function PM002()
     Local oBrowse
 
     // Instanciamento da Classe de Browse
     oBrowse := FWMBrowse():New()
 
     // Definição da tabela do Browse
-    oBrowse:SetAlias('ZA0')
+    oBrowse:SetAlias('SB1')
     
     // Definição da legenda
-    oBrowse:AddLegend( "ZA0_TIPO=='1'", "YELLOW", "Autor" )
-    oBrowse:AddLegend( "ZA0_TIPO=='2'", "BLUE" , "Interprete" )
+    oBrowse:AddLegend( "B1_GRUPO=='0008'", "YELLOW", "Grupo" )
     
     // Definição de filtro
-    oBrowse:SetFilterDefault( "ZA0_TIPO=='1'" )
+    oBrowse:SetFilterDefault( "B1_GRUPO=='0008'" )
     
     // Titulo da Browse
-    oBrowse:SetDescription('Cadastro de Autor/Interprete')
+    oBrowse:SetDescription('Cadastro de Cartas de Tarot')
    
     // Opcionalmente pode ser desligado a exibição dos detalhes
     //oBrowse:DisableDetails()
