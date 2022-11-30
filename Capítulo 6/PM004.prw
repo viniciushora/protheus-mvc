@@ -49,6 +49,11 @@ Static Function ModelDef()
     oModel:GetModel( 'SB1MASTER' ):SetDescription( 'Dados das cartas' )
     oModel:GetModel( 'SBMDETAIL' ):SetDescription( 'Dados do grupo das cartas' )
 
+    Local nPrcUnit := 0 as numeric
+    If nPrcUnit == 0 // Preço unitário
+        Help( ,, 'Help',, 'Preço unitário não informado.', 1, 0 )
+    EndIf
+
 Return oModel
 
 Static Function ViewDef()
